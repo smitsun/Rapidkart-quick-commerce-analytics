@@ -296,4 +296,82 @@ def run_analysis(data_dir: Path, processed_dir: Path, output_dir: Path) -> dict:
         "experiment_absolute_lift": round(float(treatment["conversion_rate"] - control["conversion_rate"]), 4),
         "experiment_z_score": round(z_score, 3),
         "experiment_p_value": p_value,
-        "control_margin_per_session": round(float(control["cu×­¶¶‰Ëkºwµç@¢$öffÆ–æR#¢SRãÀ¢Ğ¢&÷w3¢Æ—7E¶F–7EÒÒµĞ¢f÷"FFR–âBæFFU÷&ævR†6öæf–rç7F'EöFFRÂ6öæf–ræVæEöFFRÂg&WÒ$B"“ ¢6V6öæÆ—G’Òã#"–bFFRæÖöçF‚–âƒÂÂ"’VÇ6Rã ¢f÷"6—G’–â4•D”U3 ¢f÷"6†ææVÂ–â4„ääTÅ3 ¢–×&W76–öç2Ò–çB‡&æræ–çFVvW'2ƒ%óÂ…ó’¢6V6öæÆ—G’¢7G"ÒfÆöB‡&ærçVæ–f÷&Òƒã"ÂãSR’’–b6†ææVÂÒ$÷&væ–2"VÇ6RfÆöB‡&ærçVæ–f÷&ÒƒãBÂã’’¢6Æ–6·2Ò–çB†–×&W76–öç2¢7G"¢7VæBÒ6Æ–6·2¢6†ææVÅö75¶6†ææVÅÒ¢fÆöB‡&ærçVæ–f÷&Òƒãƒ‚ÂãR’¢&÷w2æVæB€¢°¢'7VæEöFFR#¢FFRæFFR‚’À¢&6—G’#¢6—G’À¢&7V—6—F–öåö6†ææVÂ#¢6†ææVÂÀ¢&6×–våö–B#¢b'¶6†ææVÅ³£5ÒçWW"‚—Ò×¶FFS¢U’V×Ò"À¢&–×&W76–öç2#¢–×&W76–öç2À¢&6Æ–6·2#¢6Æ–6·2À¢'7VæB#¢&÷VæB‡7VæBÂ"’À¢Ğ¢¢&WGW&âBäFFg&ÖR‡&÷w2  ¦FVb÷w&—FUö–çfVçF÷'•ö77b€¢6öæf–s¢vVæW&F÷$6öæf–rÀ¢&æs¢çç&æFöÒävVæW&F÷"À¢7F÷&W3¢BäFFg&ÖRÀ¢&öGV7G3¢BäFFg&ÖRÀ¢6öÆEöÖ¢F–7E·GWÆRÂ–çEÒÀ¢’Óâ–çC ¢÷WGWE÷F‚Ò6öæf–ræ÷WGWEöF—"ò&f7Eö–çfVçF÷'•öF–Ç’æ77b ¢–b6öæf–ræ–çfVçF÷'•öF—2ÃÒ ¢BäFFg&ÖR€¢6öÇVÖç3Õ°¢&–çfVçF÷'•öFFR"Â'7F÷&Uö–B"Â'&öGV7Eö–B"Â&÷Væ–æu÷7Fö6²"À¢'Væ—G5÷&V6V—fVB"Â'Væ—G5÷6öÆB"Â'v7FU÷Væ—G2"Â&6Æ÷6–æu÷7Fö6²"À¢'7Fö6¶÷WEöÖ–çWFW2"À¢Ğ¢’çFõö77b†÷WGWE÷F‚Â–æFWƒÔfÇ6R¢&WGW&â  ¢VæBÒBåF–ÖW7F×†6öæf–ræVæEöFFR¢–çfVçF÷'•÷7F'BÒÖ‚‡BåF–ÖW7F×†6öæf–rç7F'EöFFR’ÂVæBÒBåF–ÖVFVÇF†F—3Ö6öæf–ræ–çfVçF÷'•öF—2Ò’¢w&÷FUö†VFW"ÒfÇ6P¢F÷FÅ÷&÷w2Ò ¢W&—6†&ÆRÒ&öGV7G5²'6†VÆeöÆ–fUöF—2%ÒçFõöçV×’‚’ÃÒ@¢&öGV7Eö–G2Ò&öGV7G5²'&öGV7Eö–B%ÒçFõöçV×’‚ ¢f÷"FFR–âBæFFU÷&ævR†–çfVçF÷'•÷7F'BÂVæBÂg&WÒ$B"“ ¢6‡Væ³¢Æ—7E¶F–7EÒÒµĞ¢vVV¶VæBÒFFRæF–ögvVV²ãÒP¢f÷"7F÷&Uö–B–â7F÷&W5²'7F÷&Uö–B%Ó ¢f÷"&öGV7Eö–æFW‚Â&öGV7Eö–B–âVçVÖW&FR‡&öGV7Eö–G2“ ¢6öÆBÒ–çB‡6öÆEöÖævWB‚†FFRæFFR‚’Â7F÷&Uö–BÂ&öGV7Eö–B’Â’¢÷Væ–ærÒ–çB‡&æræ–çFVvW'2ƒBÂ#B’²Ö–âƒ‚Â6öÆBòò"’¢v7FU÷&FRÒãSR–bW&—6†&ÆU·&öGV7Eö–æFW…ÒVÇ6Rã`¢v7FRÒ–çB‡&æræ&–æöÖ–Â†÷Væ–ærÂv7FU÷&FR’¢F&vWEö6Æ÷6RÒ–çB‡&æræ–çFVvW'2ƒ2Â‚’¢&V6V—fVBÒÖ‚ƒÂ6öÆB²v7FR²F&vWEö6Æ÷6RÒ÷Væ–ær¢6Æ÷6–ærÒ÷Væ–ær²&V6V—fVBÒ6öÆBÒv7FP¢&W77W&RÒ6öÆBòÖ‚ƒÂ÷Væ–ær¢7Fö6¶÷WE÷&ö&&–Æ—G’ÒÖ–âƒãƒ"Âã#R²ã#¢Ö‚ƒÂ&W77W&RÒãr’²ƒã‚–bvVV¶VæBVÇ6R’¢7Fö6¶÷WEöÖ–çWFW2Ò–çB‡&æræ–çFVvW'2ƒ#Â3’’–b&ærç&æFöÒ‚’Â7Fö6¶÷WE÷&ö&&–Æ—G’VÇ6R ¢6‡Væ²æVæB€¢°¢&–çfVçF÷'•öFFR#¢FFRæFFR‚’À¢'7F÷&Uö–B#¢7F÷&Uö–BÀ¢'&öGV7Eö–B#¢&öGV7Eö–BÀ¢&÷Væ–æu÷7Fö6²#¢÷Væ–ærÀ¢'Væ—G5÷&V6V—fVB#¢&V6V—fVBÀ¢'Væ—G5÷6öÆB#¢6öÆBÀ¢'v7FU÷Væ—G2#¢v7FRÀ¢&6Æ÷6–æu÷7Fö6²#¢6Æ÷6–ærÀ¢'7Fö6¶÷WEöÖ–çWFW2#¢7Fö6¶÷WEöÖ–çWFW2À¢Ğ¢¢BäFFg&ÖR†6‡Væ²’çFõö77b€¢÷WGWE÷F‚À¢ÖöFSÒ&"–bw&÷FUö†VFW"VÇ6R'r"À¢†VFW#Öæ÷Bw&÷FUö†VFW"À¢–æFWƒÔfÇ6RÀ¢¢w&÷FUö†VFW"ÒG'VP¢F÷FÅ÷&÷w2³ÒÆVâ†6‡Væ²¢&WGW&âF÷FÅ÷&÷w0  ¦FVbvVæW&FU÷&ö¦V7EöFF†6öæf–s¢vVæW&F÷$6öæf–r’ÓâF–7C ¢6öæf–ræ÷WGWEöF—"æÖ¶F—"‡&VçG3ÕG'VRÂW†—7Eöö³ÕG'VR¢&ærÒçç&æFöÒæFVfVÇE÷&ær†6öæf–rç6VVB¢7F÷&W2ÒöÖ¶U÷7F÷&W2‡&ær¢&öGV7G2ÒöÖ¶U÷&öGV7G2‡&ær¢7W7FöÖW'2Â7W7FöÖW%ö†–FFVâÒöÖ¶Uö7W7FöÖW'2†6öæf–rÂ&ær ¢7F÷&W2çFõö77b†6öæf–ræ÷WGWEöF—"ò&F–Õ÷7F÷&W2æ77b"Â–æFWƒÔfÇ6R¢&öGV7G2çFõö77b†6öæf–ræ÷WGWEöF—"ò&F–Õ÷&öGV7G2æ77b"Â–æFWƒÔfÇ6R¢7W7FöÖW'2çFõö77b†6öæf–ræ÷WGWEöF—"ò&F–Õö7W7FöÖW'2æ77b"Â–æFWƒÔfÇ6R ¢÷&FW'2Â—FV×2Â6öÆEöÖÒöÖ¶Uö÷&FW'5öæEö—FV×2€¢6öæf–rÂ&ærÂ7W7FöÖW'2Â7W7FöÖW%ö†–FFVâÂ7F÷&W2Â&öGV7G0¢¢÷&FW'2çFõö77b†6öæf–ræ÷WGWEöF—"ò&f7Eö÷&FW'2æ77b"Â–æFWƒÔfÇ6R¢—FV×2çFõö77b†6öæf–ræ÷WGWEöF—"ò&f7Eö÷&FW%ö—FV×2æ77b"Â–æFWƒÔfÇ6R¢—FVÕö6÷VçBÒÆVâ†—FV×2¢FVÂ—FV×0 ¢2ÖFW&–Æ—6R–çfVçF÷'’&Vf÷&R6W76–öç26òF†RÆ&vR6öÆB×Væ—BÆöö·W6â&R&VÆV6VBà¢–çfVçF÷'•ö6÷VçBÒ÷w&—FUö–çfVçF÷'•ö77b†6öæf–rÂ&ærÂ7F÷&W2Â&öGV7G2Â6öÆEöÖ¢FVÂ6öÆEöÖ  ¢6W76–öç2ÒöÖ¶U÷6W76–öç2‡&ærÂ÷&FW'2Â7W7FöÖW'2Â6öæf–rç7F'EöFFRÂ6öæf–ræVæEöFFR¢6W76–öç2çFõö77b†6öæf–ræ÷WGWEöF—"ò&f7E÷6W76–öç2æ77b"Â–æFWƒÔfÇ6R¢6W76–öåö6÷VçBÒÆVâ‡6W76–öç2¢FVÂ6W76–öç0 ¢Ö&¶WF–ærÒöÖ¶UöÖ&¶WF–æu÷7VæB†6öæf–rÂ&ær¢Ö&¶WF–ærçFõö77b†6öæf–ræ÷WGWEöF—"ò&f7EöÖ&¶WF–æu÷7VæBæ77b"Â–æFWƒÔfÇ6R¢Ö&¶WF–æuö6÷VçBÒÆVâ†Ö&¶WF–ær¢FVÂÖ&¶WF–æp ¢ÖWFFFÒ°¢'&ö¦V7B#¢%V–6²Ô6öÖÖW&6R&öf—F&–Æ—G’b&WFVçF–öâæÇ—F–72"À¢'7–çF†WF–5öFF#¢G'VRÀ¢'6VVB#¢6öæf–rç6VVBÀ¢&FFU÷&ævR#¢¶6öæf–rç7F'EöFFRÂ6öæf–ræVæEöFFUÒÀ¢'&÷uö6÷VçG2#¢°¢&F–Õö7W7FöÖW'2#¢ÆVâ†7W7FöÖW'2’À¢&F–Õ÷7F÷&W2#¢ÆVâ‡7F÷&W2’À¢&F–Õ÷&öGV7G2#¢ÆVâ‡&öGV7G2’À¢&f7Eö÷&FW'2#¢ÆVâ†÷&FW'2’À¢&f7Eö÷&FW%ö—FV×2#¢—FVÕö6÷VçBÀ¢&f7E÷6W76–öç2#¢6W76–öåö6÷VçBÀ¢&f7Eö–çfVçF÷'•öF–Ç’#¢–çfVçF÷'•ö6÷VçBÀ¢&f7EöÖ&¶WF–æu÷7VæB#¢Ö&¶WF–æuö6÷VçBÀ¢ÒÀ¢&VÖ&VFFVE÷GFW&ç5÷Fõ÷fÆ–FFR#¢°¢%G&VFÖVçB6W76–öç2†fR&÷WBf÷W"W&6VçFvRö–çG2†–v†W"6öçfW'6–öââ"À¢$ÆFRÂ6æ6VÆÆVBÂæB&VgVæFVB÷&FW'2&VGV6R3ÖF’&WVB&V†f–÷W"â"À¢%&–âÂ'W6‚†÷W'2ÂF—7Fæ6RÂæB7F÷&RW&f÷&Öæ6RffV7BFVÆ—fW'’F–ÖRâ"À¢$F—66÷VçG26âÆ–gB6öçfW'6–öâv†–ÆRW&öF–ær6öçG&–'WF–öâÖ&v–ââ"À¢%W&—6†&ÆR&öGV7G2†fRw&VFW"–çfVçF÷'’v7FRâ"À¢ÒÀ¢Ğ¢v—F‚†6öæf–ræ÷WGWEöF—"ò&vVæW&F–öåöÖWFFFæ§6öâ"’æ÷Vâ‚'r"ÂVæ6öF–æsÒ'WFbÓ‚"’2†æFÆS ¢§6öâæGV×†ÖWFFFÂ†æFÆRÂ–æFVçCÓ"¢&WGW&âÖWFFF  ¦FVb'6Uö&w2‚’Óâ&w'6RäæÖW76S ¢'6W"Ò&w'6Rä&wVÖVçE'6W"†FW67&—F–öãÒ$vVæW&FRF†R7–çF†WF–2V–6²Ö6öÖÖW&6RFF6WBâ"¢'6W"æFEö&wVÖVçB‚"ÒÖ÷&FW'2"ÂG—SÖ–çBÂFVfVÇCÓ#SóÂ†VÇÒ$W†7BçVÖ&W"öb÷&FW'2FòvVæW&FRâ"¢'6W"æFEö&wVÖVçB‚"Ò×6VVB"ÂG—SÖ–çBÂFVfVÇCÓC"¢'6W"æFEö&wVÖVçB‚"ÒÖ–çfVçF÷'’ÖF—2"ÂG—SÖ–çBÂFVfVÇCÓ3cRÂ†VÇÒ%W6RFò6¶—–çfVçF÷'’&÷w2â"¢'6W"æFEö&wVÖVçB‚"ÒÖ÷WGWBÖF—""ÂG—SÕF‚ÂFVfVÇCÔæöæR¢&WGW&â'6W"ç'6Uö&w2‚  ¦FVbÖ–â‚’ÓâæöæS ¢&w2Ò'6Uö&w2‚¢6öæf–rÒvVæW&F÷$6öæf–r€¢åö÷&FW'3Ö&w2æ÷&FW'2À¢6VVCÖ&w2ç6VVBÀ¢–çfVçF÷'•öF—3Ö&w2æ–çfVçF÷'•öF—2À¢÷WGWEöF—#Ö&w2æ÷WGWEöF—"÷"$uôDDôD•"À¢¢ÖWFFFÒvVæW&FU÷&ö¦V7EöFF†6öæf–r¢&–çB†§6öâæGV×2†ÖWFFFÂ–æFVçCÓ"’  ¦–bõöæÖUõòÓÒ%õöÖ–åõò# ¢Ö–â‚
+        "control_margin_per_session": round(float(control["contribution_margin_per_session"]), 2),
+        "treatment_margin_per_session": round(float(treatment["contribution_margin_per_session"]), 2),
+    }
+    (output_dir / "executive_kpis.json").write_text(json.dumps(kpis, indent=2), encoding="utf-8")
+
+    if plt is not None:
+        fig, ax = plt.subplots(figsize=(9, 5))
+        ax.bar(retention_by_service["service_group"], retention_by_service["repeat_30d_rate"], color="#4C78A8")
+        ax.set(title="30-day repeat rate by service outcome", xlabel="", ylabel="Repeat rate")
+        ax.tick_params(axis="x", rotation=15)
+        fig.tight_layout()
+        fig.savefig(output_dir / "retention_by_service.png", dpi=160)
+        plt.close(fig)
+
+        weakest = store_kpis.sort_values("contribution_margin").head(10).sort_values("contribution_margin")
+        fig, ax = plt.subplots(figsize=(9, 5))
+        ax.barh(weakest["zone"], weakest["contribution_margin"], color="#DC2626")
+        ax.set(title="Lowest-contribution stores", xlabel="Contribution margin (INR)", ylabel="")
+        fig.tight_layout()
+        fig.savefig(output_dir / "store_margin_risk.png", dpi=160)
+        plt.close(fig)
+
+        fig, ax = plt.subplots(figsize=(10, 5))
+        ax.plot(daily_orders.index, daily_orders.values, label="Actual", color="#4C78A8", linewidth=1.2)
+        ax.plot(forecast["forecast_date"], forecast["forecast_orders"], label="Forecast", color="#F58518")
+        ax.fill_between(forecast["forecast_date"], forecast["lower_95"], forecast["upper_95"], alpha=0.2, color="#F58518")
+        ax.set(title="Daily order demand with 28-day forecast", xlabel="", ylabel="Orders")
+        ax.legend()
+        fig.tight_layout()
+        fig.savefig(output_dir / "demand_forecast.png", dpi=160)
+        plt.close(fig)
+
+    on_time_rate = float(retention_by_service.loc[retention_by_service["service_group"] == "On time (<=35m)", "repeat_30d_rate"].iloc[0])
+    late_rate = float(retention_by_service.loc[retention_by_service["service_group"] == "Late (>35m)", "repeat_30d_rate"].iloc[0])
+    weakest_store = store_kpis.sort_values("contribution_margin").iloc[0]
+    margin_per_session_lift = float(
+        treatment["contribution_margin_per_session"] - control["contribution_margin_per_session"]
+    )
+    experiment_decision = "launch the treatment with monitoring" if p_value < 0.05 and margin_per_session_lift > 0 else "do not launch the treatment yet"
+    summary = f"""# Executive Summary
+
+## Decision context
+
+Management asked where profitability and retention are leaking and whether the checkout treatment should be launched.
+
+## Findings
+
+- The dataset contains {len(orders):,} orders from {orders['customer_id'].nunique():,} purchasing customers.
+- Total contribution margin is INR {kpis['contribution_margin']:,.0f}, a {kpis['contribution_margin_rate']:.1%} margin rate.
+- Orders delivered within 35 minutes have a {on_time_rate:.1%} 30-day repeat rate versus {late_rate:.1%} for late orders, a {(on_time_rate-late_rate):.1%} absolute gap.
+- Treatment conversion is {float(treatment['conversion_rate']):.1%} versus {float(control['conversion_rate']):.1%} for control (two-sided p-value {p_value:.3g}).
+- Treatment contribution margin per assigned session is INR {float(treatment['contribution_margin_per_session']):,.2f} versus INR {float(control['contribution_margin_per_session']):,.2f} for control.
+- {weakest_store['zone']}, {weakest_store['city']} has the lowest simulated contribution margin at INR {weakest_store['contribution_margin']:,.0f}.
+
+## Recommendations
+
+1. Prioritise late-delivery reduction in the weakest service zones and monitor the 30-day repeat rate as the outcome metric.
+2. Based on both statistical significance and contribution per assigned session, **{experiment_decision}**; retain a margin guardrail after rollout.
+3. Review products with high stockout minutes and positive gross profit separately from products with high waste and weak margins.
+
+## Important limitation
+
+This is synthetic portfolio data. The analysis demonstrates a reproducible method and must not be presented as evidence about a real company.
+"""
+    (output_dir / "executive_summary.md").write_text(summary, encoding="utf-8")
+    return kpis
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Run the quick-commerce analytical workflow.")
+    parser.add_argument("--data-dir", type=Path, default=RAW_DATA_DIR)
+    parser.add_argument("--processed-dir", type=Path, default=PROCESSED_DATA_DIR)
+    parser.add_argument("--output-dir", type=Path, default=OUTPUT_DIR)
+    args = parser.parse_args()
+    print(json.dumps(run_analysis(args.data_dir, args.processed_dir, args.output_dir), indent=2))
+
+
+if __name__ == "__main__":
+    main()
