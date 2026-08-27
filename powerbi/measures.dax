@@ -1,0 +1,126 @@
+// Create a dedicated _Measures table and add these measures.
+
+Orders =
+DISTINCTCOUNT ( fact_orders[order_id] )
+
+Delivered Orders =
+CALCULATE ( [Orders], fact_orders[status] = "Delivered" )
+
+Cancelled Orders =
+CALCULATE ( [Orders], fact_orders[status] = "Cancelled" )
+
+Customers =
+DISTINCTCOUNT ( fact_orders[customer_id] )
+
+Placed GMV =
+SUM ( fact_orders[gross_merchandise_value] )
+
+Realized GMV =
+CALCULATE (
+    SUM ( fact_orders[gross_merchandise_value] ),
+    fact_orders[status] <> "Cancelled"
+)
+
+Net Revenue =
+SUMX (
+    fact_orders,
+    IF (
+        fact_orders[status] = "Cancelled",
+        0,
+        fact_orders[gross_merchandise_value]
+            - fact_orders[discount_amount]
+            + fact_orders[delivery_fee]
+            + fact_orders[packaging_fee]
+            - fact_orders[refund_amount]
+    )
+)
+
+Realized COGS =
+CALCULATE (
+    SUMX (
+        fact_order_items,
+        fact_order_items[quantity] * fact_order_items[unit_cost]
+    ),
+    fact_orders[status] <> "Cancelled"
+)
+
+Delivery Cost =
+SUM ( fact_orders[estimated_delivery_cost] )
+
+Contribution Margin =
+[Net Revenue] - [Realized COGS] - [Delivery Cost]
+
+Contribution Margin % =
+DIVIDE ( [Contribution Margin], [Net Revenue] )
+
+AOV =
+DIVIDE ( [Realized GMV], CALCULATE ( [Orders], fact_orders[status] <> "Cancelled" ) )
+
+Cancellation Rate =
+DIVIDE ( [Cancelled Orders], [Orders] )
+
+On-Time Orders =
+CALCULATE (
+    [Orders],
+    FILTER (
+        fact_orders,
+        fact_orders[status] <> "Cancelled"
+            && fact_orders[delivery_minutes] <= fact_orders[promised_minutes]
+    )
+)
+
+On-Time Rate =
+DIVIDE (
+    [On-Time Orders],
+    CALCULATE ( [Orders], fact_orders[status] <> "Cancelled" )
+)
+
+Average Delivery Minutes =
+CALCULATE (
+    AVERAGE ( fact_orders[delivery_minutes] ),
+    fact_orders[status] <> "Cancelled"
+)
+
+Sessions =
+DISTINCTCOUNT ( fact_sessions[session_id] )
+
+Conversions =
+CALCULATE ( [Sessions], fact_sessions[converted] = TRUE () )
+
+Conversion Rate =
+DIVIDE ( [Conversions], [Sessions] )
+
+Add-to-Cart Rate =
+DIVIDE (
+    CALCULATE ( [Sessions], fact_sessions[added_to_cart] = TRUE () ),
+    [Sessions]
+)
+
+Units Sold =
+SUM ( fact_inventory_daily[units_sold] )
+
+Waste Units =
+SUM ( fact_inventory_daily[waste_units] )
+
+Waste Rate =
+DIVIDE ( [Waste Units], [Units Sold] + [Waste Units] )
+
+Stockout Hours =
+DIVIDE ( SUM ( fact_inventory_daily[stockout_minutes] ), 60 )
+
+Repeat Customers =
+COUNTROWS (
+    FILTER (
+        VALUES ( fact_orders[customer_id] ),
+        CALCULATE ( DISTINCTCOUNT ( fact_orders[order_id] ) ) > 1
+    )
+)
+
+Repeat Customer Rate =
+DIVIDE ( [Repeat Customers], [Customers] )
+
+Realized GMV Previous Month =
+CALCULATE ( [Realized GMV], DATEADD ( 'Date'[Date], -1, MONTH ) )
+
+GMV MoM % =
+DIVIDE ( [Realized GMV] - [Realized GMV Previous Month], [Realized GMV Previous Month] )

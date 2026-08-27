@@ -1,0 +1,23 @@
+{
+  "name": "RapidKart Portfolio",
+  "dataColors": ["#2563EB", "#14B8A6", "#F59E0B", "#7C3AED", "#64748B", "#DC2626"],
+  "background": "#F8FAFC",
+  "foreground": "#0F172A",
+  "tableAccent": "#2563EB",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "title": [{"fontFamily": "Segoe UI Semibold", "fontSize": 12, "color": {"solid": {"color": "#0F172A"}}}],
+        "labels": [{"fontFamily": "Segoe UI", "color": {"solid": {"color": "#334155"}}}],
+        "background": [{"color": {"solid": {"color": "#FFFFFF"}}, "transparency": 0}],
+        "border": [{"show": true, "color": {"solid": {"color": "#E2E8F0"}}, "radius": 6}]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [{"color": {"solid": {"color": "#F8FAFC"}}, "transparency": 0}]
+      }
+    }
+  }
+}
+

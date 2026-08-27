@@ -1,0 +1,10 @@
+numpy>=2.0,<3
+pandas>=2.2,<4
+matplotlib>=3.9,<4
+seaborn>=0.13,<1
+scipy>=1.14,<2
+SQLAlchemy>=2.0,<3
+psycopg2-binary>=2.9,<3
+python-dotenv>=1.0,<2
+pytest>=8.0,<10
+

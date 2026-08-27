@@ -171,4 +171,3 @@ Do not lead with “I made a dashboard.” Lead with the decision you enabled.
 - The forecast is an interpretable baseline, not a production forecasting system.
 - Simulated association should not be presented as real-world causation.
 - Power BI Desktop is required to create the `.pbix`; the repository supplies the model, outputs, theme, measures, and build instructions because `.pbix` is a proprietary binary artifact.
-

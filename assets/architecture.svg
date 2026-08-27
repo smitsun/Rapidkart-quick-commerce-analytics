@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">RapidKart analytics architecture</title>
+  <desc id="desc">Data flows from the synthetic generator through CSV validation into PostgreSQL and Python, then into Power BI and business decisions.</desc>
+  <defs>
+    <style>
+      .box{fill:#fff;stroke:#2563eb;stroke-width:2;rx:12}.db{fill:#eff6ff;stroke:#2563eb;stroke-width:2}.out{fill:#ecfdf5;stroke:#14b8a6;stroke-width:2}.text{font:600 18px 'Segoe UI',sans-serif;fill:#0f172a;text-anchor:middle}.sub{font:14px 'Segoe UI',sans-serif;fill:#475569;text-anchor:middle}.arrow{stroke:#64748b;stroke-width:3;fill:none;marker-end:url(#head)}
+    </style>
+    <marker id="head" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#64748b"/></marker>
+  </defs>
+  <rect width="1200" height="420" fill="#f8fafc"/>
+  <text x="600" y="42" class="text" font-size="26">RapidKart Analytics Architecture</text>
+  <rect x="40" y="120" width="190" height="105" class="box"/><text x="135" y="158" class="text">Generator</text><text x="135" y="187" class="sub">Seeded synthetic data</text>
+  <rect x="285" y="120" width="190" height="105" class="box"/><text x="380" y="158" class="text">Raw CSVs</text><text x="380" y="187" class="sub">Seven modelled tables</text>
+  <rect x="530" y="70" width="190" height="105" class="box"/><text x="625" y="108" class="text">Quality Gate</text><text x="625" y="137" class="sub">Keys, finance, funnel</text>
+  <ellipse cx="625" cy="295" rx="95" ry="52" class="db"/><text x="625" y="291" class="text">PostgreSQL</text><text x="625" y="318" class="sub">Views + 25 queries</text>
+  <rect x="775" y="120" width="190" height="105" class="box"/><text x="870" y="158" class="text">Python</text><text x="870" y="187" class="sub">Statistics + forecast</text>
+  <rect x="775" y="270" width="190" height="105" class="box"/><text x="870" y="308" class="text">Power BI</text><text x="870" y="337" class="sub">Model + four pages</text>
+  <rect x="1015" y="195" width="150" height="105" class="out"/><text x="1090" y="233" class="text">Decisions</text><text x="1090" y="262" class="sub">Margin, retention, ops</text>
+  <path d="M230 172H285" class="arrow"/><path d="M475 155H530" class="arrow"/><path d="M475 190C500 250 510 285 530 295" class="arrow"/><path d="M720 122H775" class="arrow"/><path d="M720 295H775" class="arrow"/><path d="M870 225V270" class="arrow"/><path d="M965 172C1000 180 1005 205 1015 220" class="arrow"/><path d="M965 322C1000 312 1005 285 1015 270" class="arrow"/>
+</svg>
+

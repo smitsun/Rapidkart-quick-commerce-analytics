@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+
+# Local configuration
+.env
+
+# Generated data and analysis outputs
+data/raw/*.csv
+data/raw/*.json
+data/processed/*.csv
+outputs/*.csv
+outputs/*.json
+outputs/*.png
+
+# Power BI and editor files
+*.pbix
+.vscode/
+.idea/
+tmp/
