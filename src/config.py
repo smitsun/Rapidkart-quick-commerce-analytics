@@ -25,4 +25,3 @@ class GeneratorConfig:
         # The simulation averages roughly five to seven orders per customer.
         return min(self.n_orders, max(500, int(self.n_orders / 5.5)))
 
-
