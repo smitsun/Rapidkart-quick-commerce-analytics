@@ -1,0 +1,17 @@
+{
+  "orders": 250000,
+  "customers": 45066,
+  "gmv": 173640264.07,
+  "net_revenue": 165499974.28,
+  "contribution_margin": 34957292.54,
+  "contribution_margin_rate": 0.2112,
+  "cancellation_rate": 0.0202,
+  "on_time_rate": 0.7032,
+  "control_conversion_rate": 0.28,
+  "treatment_conversion_rate": 0.32,
+  "experiment_absolute_lift": 0.04,
+  "experiment_z_score": 39.841,
+  "experiment_p_value": 0.0,
+  "control_margin_per_session": 41.45,
+  "treatment_margin_per_session": 42.45
+}

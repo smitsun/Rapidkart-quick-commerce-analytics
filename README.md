@@ -1,5 +1,7 @@
 # RapidKart: Quick-Commerce Profitability & Retention Analytics
 
+![Project validation](https://github.com/smitsun/Rapidkart-quick-commerce-analytics/actions/workflows/ci.yml/badge.svg)
+
 An end-to-end data analyst portfolio project that answers a realistic management question:
 
 > Where are profitability and retention leaking, and which operational or product actions should the company take?
@@ -43,6 +45,21 @@ The full default build contains:
 - Customer, store, product, and marketing dimensions/facts
 
 The exact counts are written to `data/raw/generation_metadata.json` after generation.
+
+### Verified full-scale build
+
+The complete seed-42 build was generated, validated, loaded into PostgreSQL, and analysed end to end:
+
+| Layer | Verified result |
+|---|---:|
+| Orders | 250,000 |
+| Order items | 764,979 |
+| App sessions | 833,334 |
+| Daily inventory rows | 1,051,200 |
+| Data-quality checks | 38 passed, 0 failed |
+| SQL business queries | 25 executed successfully |
+
+The generated tables are intentionally Git-ignored because they are reproducible. Small evidence artifacts, charts, KPI results, and the executive memo are versioned in `outputs/`.
 
 ### Embedded business behaviour
 
@@ -143,6 +160,27 @@ The recommended four pages are:
 3. Store Operations
 4. Product & Inventory
 
+## Verified portfolio outputs
+
+The repository includes the output of the full 250,000-order build:
+
+- [Executive summary](outputs/executive_summary.md)
+- [Executive KPI values](outputs/executive_kpis.json)
+- [Data-quality report](outputs/data_quality_report.json)
+- [Full-scale findings](docs/sample_findings.md)
+
+### Service outcome and 30-day repeat behaviour
+
+![30-day repeat rate by service outcome](outputs/retention_by_service.png)
+
+### Store contribution-margin risk
+
+![Stores with the lowest contribution margin](outputs/store_margin_risk.png)
+
+### Daily demand and 28-day baseline forecast
+
+![Daily order demand and forecast](outputs/demand_forecast.png)
+
 ## Portfolio presentation
 
 Use the generated `outputs/executive_summary.md` as the basis for a one-page memo. In an interview, explain:
@@ -162,7 +200,7 @@ Do not lead with “I made a dashboard.” Lead with the decision you enabled.
 - [Data dictionary](docs/data_dictionary.md)
 - [Analytical assumptions](docs/analytical_assumptions.md)
 - [Interview and presentation guide](docs/interview_guide.md)
-- [Verified sample findings](docs/sample_findings.md)
+- [Verified full-scale findings](docs/sample_findings.md)
 - [Power BI dashboard wireframe](powerbi/dashboard_wireframe.md)
 
 ## Limitations

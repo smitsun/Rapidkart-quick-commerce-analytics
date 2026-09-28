@@ -10,6 +10,7 @@ import pandas as pd
 
 try:
     import matplotlib.pyplot as plt
+    from matplotlib.ticker import FuncFormatter, PercentFormatter
 except ModuleNotFoundError:  # Core CSV analysis remains usable in minimal environments.
     plt = None
 
@@ -302,10 +303,20 @@ def run_analysis(data_dir: Path, processed_dir: Path, output_dir: Path) -> dict:
     (output_dir / "executive_kpis.json").write_text(json.dumps(kpis, indent=2), encoding="utf-8")
 
     if plt is not None:
+        plt.style.use("seaborn-v0_8-whitegrid")
+
+        service_order = ["On time (<=35m)", "Late (>35m)", "Refunded", "Cancelled"]
+        retention_chart = retention_by_service.set_index("service_group").reindex(service_order).reset_index()
         fig, ax = plt.subplots(figsize=(9, 5))
-        ax.bar(retention_by_service["service_group"], retention_by_service["repeat_30d_rate"], color="#4C78A8")
-        ax.set(title="30-day repeat rate by service outcome", xlabel="", ylabel="Repeat rate")
-        ax.tick_params(axis="x", rotation=15)
+        bars = ax.bar(
+            retention_chart["service_group"],
+            retention_chart["repeat_30d_rate"],
+            color=["#2563EB", "#F59E0B", "#8B5CF6", "#DC2626"],
+        )
+        ax.bar_label(bars, labels=[f"{value:.1%}" for value in retention_chart["repeat_30d_rate"]], padding=4)
+        ax.set(title="30-day repeat rate by service outcome", xlabel="", ylabel="Repeat rate", ylim=(0, 0.6))
+        ax.yaxis.set_major_formatter(PercentFormatter(1.0))
+        ax.tick_params(axis="x", rotation=8)
         fig.tight_layout()
         fig.savefig(output_dir / "retention_by_service.png", dpi=160)
         plt.close(fig)
@@ -314,6 +325,8 @@ def run_analysis(data_dir: Path, processed_dir: Path, output_dir: Path) -> dict:
         fig, ax = plt.subplots(figsize=(9, 5))
         ax.barh(weakest["zone"], weakest["contribution_margin"], color="#DC2626")
         ax.set(title="Lowest-contribution stores", xlabel="Contribution margin (INR)", ylabel="")
+        ax.invert_yaxis()
+        ax.xaxis.set_major_formatter(FuncFormatter(lambda value, _: f"{value / 1_000_000:.1f}M"))
         fig.tight_layout()
         fig.savefig(output_dir / "store_margin_risk.png", dpi=160)
         plt.close(fig)

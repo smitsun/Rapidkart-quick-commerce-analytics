@@ -46,7 +46,7 @@ def validate_csv_bundle(data_dir: Path, report_path: Path | None = None) -> dict
 
     for filename, required in REQUIRED_COLUMNS.items():
         path = data_dir / filename
-        _record(checks, f"{filename}: exists", path.exists(), str(path))
+        _record(checks, f"{filename}: exists", path.exists(), f"data/raw/{filename}")
         if path.exists():
             columns = set(pd.read_csv(path, nrows=0).columns)
             missing = sorted(required - columns)

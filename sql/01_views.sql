@@ -38,8 +38,10 @@ SELECT
     delivery_minutes,
     status,
     LEAD(order_ts) OVER (PARTITION BY customer_id ORDER BY order_ts) AS next_order_ts,
-    LEAD(order_ts) OVER (PARTITION BY customer_id ORDER BY order_ts) <= order_ts + INTERVAL '30 days'
-        AS repeated_within_30d
+    COALESCE(
+        LEAD(order_ts) OVER (PARTITION BY customer_id ORDER BY order_ts) <= order_ts + INTERVAL '30 days',
+        FALSE
+    ) AS repeated_within_30d
 FROM fact_orders;
 
 CREATE OR REPLACE VIEW vw_daily_store_kpis AS

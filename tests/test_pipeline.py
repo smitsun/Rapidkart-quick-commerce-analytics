@@ -27,6 +27,10 @@ def test_small_end_to_end_pipeline(tmp_path):
 
     report = validate_csv_bundle(raw, outputs / "quality.json")
     assert report["passed"], json.dumps(report, indent=2)
+    existence_details = [
+        check["detail"] for check in report["checks"] if check["check"].endswith(": exists")
+    ]
+    assert all(detail.startswith("data/raw/") for detail in existence_details)
 
     kpis = run_analysis(raw, processed, outputs)
     assert kpis["orders"] == 3_000

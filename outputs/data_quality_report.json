@@ -1,0 +1,200 @@
+{
+  "passed": true,
+  "summary": {
+    "checks": 38,
+    "passed": 38,
+    "failed": 0
+  },
+  "checks": [
+    {
+      "check": "dim_customers.csv: exists",
+      "passed": true,
+      "detail": "data/raw/dim_customers.csv"
+    },
+    {
+      "check": "dim_customers.csv: required columns",
+      "passed": true,
+      "detail": "missing=[]"
+    },
+    {
+      "check": "dim_stores.csv: exists",
+      "passed": true,
+      "detail": "data/raw/dim_stores.csv"
+    },
+    {
+      "check": "dim_stores.csv: required columns",
+      "passed": true,
+      "detail": "missing=[]"
+    },
+    {
+      "check": "dim_products.csv: exists",
+      "passed": true,
+      "detail": "data/raw/dim_products.csv"
+    },
+    {
+      "check": "dim_products.csv: required columns",
+      "passed": true,
+      "detail": "missing=[]"
+    },
+    {
+      "check": "fact_orders.csv: exists",
+      "passed": true,
+      "detail": "data/raw/fact_orders.csv"
+    },
+    {
+      "check": "fact_orders.csv: required columns",
+      "passed": true,
+      "detail": "missing=[]"
+    },
+    {
+      "check": "fact_order_items.csv: exists",
+      "passed": true,
+      "detail": "data/raw/fact_order_items.csv"
+    },
+    {
+      "check": "fact_order_items.csv: required columns",
+      "passed": true,
+      "detail": "missing=[]"
+    },
+    {
+      "check": "fact_sessions.csv: exists",
+      "passed": true,
+      "detail": "data/raw/fact_sessions.csv"
+    },
+    {
+      "check": "fact_sessions.csv: required columns",
+      "passed": true,
+      "detail": "missing=[]"
+    },
+    {
+      "check": "fact_inventory_daily.csv: exists",
+      "passed": true,
+      "detail": "data/raw/fact_inventory_daily.csv"
+    },
+    {
+      "check": "fact_inventory_daily.csv: required columns",
+      "passed": true,
+      "detail": "missing=[]"
+    },
+    {
+      "check": "fact_marketing_spend.csv: exists",
+      "passed": true,
+      "detail": "data/raw/fact_marketing_spend.csv"
+    },
+    {
+      "check": "fact_marketing_spend.csv: required columns",
+      "passed": true,
+      "detail": "missing=[]"
+    },
+    {
+      "check": "customer primary key",
+      "passed": true,
+      "detail": "rows=45,454"
+    },
+    {
+      "check": "store primary key",
+      "passed": true,
+      "detail": "rows=24"
+    },
+    {
+      "check": "product primary key",
+      "passed": true,
+      "detail": "rows=120"
+    },
+    {
+      "check": "order primary key",
+      "passed": true,
+      "detail": "rows=250,000"
+    },
+    {
+      "check": "order-item primary key",
+      "passed": true,
+      "detail": "rows=764,979"
+    },
+    {
+      "check": "session primary key",
+      "passed": true,
+      "detail": "rows=833,334"
+    },
+    {
+      "check": "order customer foreign key",
+      "passed": true,
+      "detail": "every order customer exists"
+    },
+    {
+      "check": "order store foreign key",
+      "passed": true,
+      "detail": "every order store exists"
+    },
+    {
+      "check": "item order foreign key",
+      "passed": true,
+      "detail": "every item order exists"
+    },
+    {
+      "check": "item product foreign key",
+      "passed": true,
+      "detail": "every item product exists"
+    },
+    {
+      "check": "session customer foreign key",
+      "passed": true,
+      "detail": "every session customer exists"
+    },
+    {
+      "check": "GMV reconciles to items",
+      "passed": true,
+      "detail": "max_absolute_difference=0.0000"
+    },
+    {
+      "check": "valid order status",
+      "passed": true,
+      "detail": "{'Delivered': 241503, 'Cancelled': 5061, 'Refunded': 3436}"
+    },
+    {
+      "check": "orders span all calendar months",
+      "passed": true,
+      "detail": "min=2025-01-01 07:07:02; max=2025-12-31 22:58:41; months=12"
+    },
+    {
+      "check": "non-negative financials",
+      "passed": true,
+      "detail": "GMV, discount, and refund are non-negative"
+    },
+    {
+      "check": "logical session funnel",
+      "passed": true,
+      "detail": "later stages require earlier stages"
+    },
+    {
+      "check": "converted sessions link to orders",
+      "passed": true,
+      "detail": "converted_sessions=250,000"
+    },
+    {
+      "check": "balanced experiment assignment",
+      "passed": true,
+      "detail": "group_counts={'Control': 416668, 'Treatment': 416666}"
+    },
+    {
+      "check": "embedded experiment lift",
+      "passed": true,
+      "detail": "absolute_lift=0.0400"
+    },
+    {
+      "check": "inventory balance equation",
+      "passed": true,
+      "detail": "rows=1,051,200; errors=0"
+    },
+    {
+      "check": "non-negative inventory",
+      "passed": true,
+      "detail": "invalid_rows=0"
+    },
+    {
+      "check": "metadata order count",
+      "passed": true,
+      "detail": "expected=250,000"
+    }
+  ]
+}

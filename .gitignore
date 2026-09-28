@@ -12,8 +12,6 @@ data/raw/*.csv
 data/raw/*.json
 data/processed/*.csv
 outputs/*.csv
-outputs/*.json
-outputs/*.png
 
 # Power BI and editor files
 *.pbix
